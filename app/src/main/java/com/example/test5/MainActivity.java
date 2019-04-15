@@ -1,14 +1,18 @@
 package com.example.test5;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.test5.model.Contact;
 import com.example.test5.model.ContactsList;
+import com.example.test5.second.SecondActivity;
 import com.example.test5.service.APIClient;
 import com.example.test5.service.APIService;
 
@@ -26,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Context context;
 
-// postman   https://www.androidhive.info/2012/01/android-json-parsing-tutorial/
+    Button btn;
+
+//    https://www.androidhive.info/2012/01/android-json-parsing-tutorial/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
         context=this;
 
         recyclerView=findViewById(R.id.recyclereview);
+
+        btn=findViewById(R.id.btn_next);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(context, SecondActivity.class));
+            }
+        });
 
         sendRequest();
     }

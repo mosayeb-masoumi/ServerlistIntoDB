@@ -1,6 +1,6 @@
 package com.example.test5;
 
-import android.content.ContentValues;
+
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,9 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.example.test5.model.Contact;
-import com.example.test5.model.ContactsList;
+
 
 import java.util.List;
 
@@ -23,8 +22,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         this.contacts = contacts;
         this.context = context;
     }
-
-
 
 
     @NonNull
@@ -42,6 +39,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.txtGmail.setText(model.getEmail());
         holder.txtPhone.setText(model.phone.getMobile());
 
+
     }
 
     @Override
@@ -57,6 +55,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             txtName=itemView.findViewById(R.id.txtRowName);
             txtGmail=itemView.findViewById(R.id.txtRowemail);
             txtPhone=itemView.findViewById(R.id.txtRowphone);
+
+
         }
     }
 }
